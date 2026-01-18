@@ -93,8 +93,30 @@ Page is complete when:
   - Warm cream-tinted backgrounds (#fffcf9, #faf7f4, #f5f0eb)
   - Text colors updated to chocolate brown tones for warmth
 
+- **IN PROGRESS: Conversion-First Homepage Rebuild (2026-01-18)**
+  - LOOP 1 (Research): JTBD & Anxiety Stack defined
+    - JTBD: "Skin that looks firmer, smoother, healthier - without injectables or hype"
+    - Anxieties: "Will it work?", "Is it comfortable?", "Will I regret spending?"
+  - LOOP 2 (Architecture): New homepage section flow
+    - Section 1: Calm Hero (outcome-focused, soft CTAs)
+    - Section 2: Problem Reframe ("Why most masks disappoint")
+    - Section 3: Product Introduction (comfort-first)
+    - Section 4: How It Works (routine simplicity)
+    - Section 5: What Results Look Like (timeline expectations)
+    - Section 6: Reviews (long-form, honest)
+    - Section 7: FAQ (objection-led)
+    - Section 8: Risk Reversal (guarantee)
+  - LOOP 3 (Language): Premium brand voice
+    - Short sentences, no exclamation marks
+    - Cosmetic language ("helps improve appearance of...")
+    - Timeline expectations (Week 2, 4, 8, 12+)
+    - Reads like Apple/Aesop/Whoop
+
 ### In Progress
-- None
+- LOOP 4: Proof Hierarchy & Review UX
+- LOOP 5: Product Page refinements
+- LOOP 6: Design System (motion, micro-interactions)
+- LOOP 7: Post-Purchase & Returns UX
 
 ### Blocked
 - None
@@ -105,6 +127,8 @@ Page is complete when:
 - Connect Add to Cart to Shopify checkout
 - Add product variant selection if multiple SKUs
 - Consider adding page entrance animations for luxury feel
+- Add review filtering by concern (firmness, glow, texture)
+- Add "Why This One's Different" section (complaint inversion)
 
 ---
 
