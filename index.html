@@ -7,7 +7,7 @@
     <meta name="description" content="Clinical-grade LED face mask with red + near-infrared light therapy. Reduce wrinkles, boost collagen, improve skin tone. 60-day guarantee. Free AU shipping.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -16,25 +16,28 @@
         }
 
         :root {
-            --primary: #8B2635;
-            --primary-dark: #6d1e2a;
-            --primary-light: #a93342;
-            --secondary: #111827;
-            --accent: #D4AF37;
-            --success: #059669;
-            --text: #1f2937;
-            --text-secondary: #6b7280;
-            --text-light: #9ca3af;
-            --border: #e5e7eb;
+            /* LV-inspired luxury color palette */
+            --primary: #0b233c;
+            --primary-dark: #061525;
+            --primary-light: #143656;
+            --secondary: #161616;
+            --accent: #c4a97d;
+            --accent-light: #d4bc94;
+            --success: #2d5a3d;
+            --text: #161616;
+            --text-secondary: #5c5c5c;
+            --text-light: #8a8a8a;
+            --border: #e8e8e8;
             --bg: #ffffff;
-            --bg-secondary: #f9fafb;
-            --bg-tertiary: #f3f4f6;
-            --radius: 12px;
-            --radius-lg: 16px;
-            --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
-            --shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
-            --shadow-lg: 0 10px 25px -5px rgba(0,0,0,0.1);
-            --transition: all 0.2s ease;
+            --bg-secondary: #fafafa;
+            --bg-tertiary: #f5f5f5;
+            --radius: 0;
+            --radius-lg: 0;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.04);
+            --shadow: 0 2px 8px rgba(0,0,0,0.06);
+            --shadow-lg: 0 8px 30px rgba(0,0,0,0.08);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         html {
@@ -42,32 +45,49 @@
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            line-height: 1.6;
+            font-family: 'Josefin Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.7;
             color: var(--text);
             background: var(--bg);
             -webkit-font-smoothing: antialiased;
+            letter-spacing: 0.02em;
+            font-weight: 400;
         }
 
-        /* Announcement Bar */
+        /* LV-style editorial serif for headings */
+        h1, h2, .section-title {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-weight: 500;
+            letter-spacing: 0.03em;
+        }
+
+        /* Announcement Bar - LV style minimal */
         .announcement-bar {
             background: var(--secondary);
             color: white;
-            padding: 0.625rem 1rem;
+            padding: 0.75rem 1rem;
             text-align: center;
-            font-size: 0.875rem;
-            font-weight: 500;
+            font-size: 0.75rem;
+            font-weight: 400;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
         }
 
         .announcement-bar a {
             color: var(--accent);
-            text-decoration: underline;
+            text-decoration: none;
+            border-bottom: 1px solid var(--accent);
+            transition: var(--transition-fast);
         }
 
-        /* Header */
+        .announcement-bar a:hover {
+            opacity: 0.8;
+        }
+
+        /* Header - LV minimal luxury style */
         header {
             background: var(--bg);
-            padding: 1rem 1.5rem;
+            padding: 1.25rem 2rem;
             position: sticky;
             top: 0;
             z-index: 100;
@@ -75,7 +95,7 @@
         }
 
         nav {
-            max-width: 1280px;
+            max-width: 1400px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
@@ -83,20 +103,23 @@
         }
 
         .logo {
-            font-size: 1.25rem;
-            font-weight: 700;
+            font-family: 'Josefin Sans', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
             color: var(--secondary);
             text-decoration: none;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.75rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
         }
 
         .logo-icon {
-            width: 32px;
-            height: 32px;
+            width: 36px;
+            height: 36px;
             background: var(--primary);
-            border-radius: 8px;
+            border-radius: 0;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -111,349 +134,424 @@
         .nav-links {
             display: flex;
             align-items: center;
-            gap: 2rem;
+            gap: 3rem;
         }
 
         .nav-links a {
-            color: var(--text-secondary);
+            color: var(--text);
             text-decoration: none;
-            font-size: 0.9375rem;
+            font-size: 0.75rem;
             font-weight: 500;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--text);
             transition: var(--transition);
         }
 
-        .nav-links a:hover {
-            color: var(--text);
+        .nav-links a:hover::after {
+            width: 100%;
         }
 
         .nav-cart {
             position: relative;
             color: var(--text);
+            transition: var(--transition-fast);
+        }
+
+        .nav-cart:hover {
+            opacity: 0.7;
         }
 
         .nav-cart svg {
-            width: 24px;
-            height: 24px;
+            width: 22px;
+            height: 22px;
+            stroke-width: 1.5;
         }
 
-        /* Product Section */
+        /* Product Section - LV generous whitespace */
         .product-section {
-            max-width: 1280px;
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 2rem 1.5rem 4rem;
+            padding: 4rem 3rem 6rem;
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 6rem;
             align-items: start;
         }
 
-        /* Product Gallery */
+        /* Product Gallery - LV clean aesthetic */
         .product-gallery {
             position: sticky;
-            top: 100px;
+            top: 120px;
         }
 
         .main-image {
-            background: var(--bg-secondary);
-            border-radius: var(--radius-lg);
+            background: var(--bg-tertiary);
+            border-radius: 0;
             aspect-ratio: 1;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             overflow: hidden;
-            border: 1px solid var(--border);
+            border: none;
         }
 
         .main-image-placeholder {
             text-align: center;
             color: var(--text-light);
-            padding: 2rem;
+            padding: 3rem;
         }
 
         .main-image-placeholder svg {
-            width: 80px;
-            height: 80px;
-            margin-bottom: 1rem;
-            opacity: 0.5;
+            width: 100px;
+            height: 100px;
+            margin-bottom: 1.5rem;
+            opacity: 0.4;
+            stroke-width: 0.5;
         }
 
         .thumbnail-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 0.75rem;
+            gap: 1rem;
         }
 
         .thumbnail {
             aspect-ratio: 1;
-            background: var(--bg-secondary);
-            border-radius: var(--radius);
-            border: 2px solid transparent;
+            background: var(--bg-tertiary);
+            border-radius: 0;
+            border: 1px solid transparent;
             cursor: pointer;
             transition: var(--transition);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             color: var(--text-light);
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
         }
 
         .thumbnail:hover, .thumbnail.active {
-            border-color: var(--primary);
+            border-color: var(--secondary);
         }
 
-        /* Product Info */
+        /* Product Info - LV luxury typography */
         .product-info {
-            padding-top: 0.5rem;
+            padding-top: 0;
         }
 
         .product-badges {
             display: flex;
-            gap: 0.5rem;
-            margin-bottom: 1rem;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
             flex-wrap: wrap;
         }
 
         .badge {
             display: inline-flex;
             align-items: center;
-            gap: 0.375rem;
-            padding: 0.375rem 0.75rem;
-            border-radius: 100px;
-            font-size: 0.75rem;
-            font-weight: 600;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 0;
+            font-size: 0.65rem;
+            font-weight: 500;
             text-transform: uppercase;
-            letter-spacing: 0.025em;
+            letter-spacing: 0.1em;
+            border: 1px solid;
         }
 
         .badge-bestseller {
-            background: var(--accent);
-            color: var(--secondary);
+            background: transparent;
+            color: var(--accent);
+            border-color: var(--accent);
         }
 
         .badge-tga {
-            background: var(--bg-tertiary);
+            background: transparent;
             color: var(--text-secondary);
+            border-color: var(--border);
         }
 
         .badge svg {
-            width: 14px;
-            height: 14px;
+            width: 12px;
+            height: 12px;
         }
 
         .product-title {
-            font-size: 2rem;
-            font-weight: 700;
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 2.5rem;
+            font-weight: 400;
             color: var(--secondary);
-            line-height: 1.2;
-            margin-bottom: 0.75rem;
+            line-height: 1.15;
+            margin-bottom: 1rem;
+            letter-spacing: 0.01em;
         }
 
         .product-rating {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
-            margin-bottom: 1.25rem;
+            gap: 0.75rem;
+            margin-bottom: 1.75rem;
+            padding-bottom: 1.75rem;
+            border-bottom: 1px solid var(--border);
         }
 
         .stars {
             color: var(--accent);
-            font-size: 1rem;
-            letter-spacing: 1px;
+            font-size: 0.875rem;
+            letter-spacing: 2px;
         }
 
         .rating-text {
-            font-size: 0.875rem;
+            font-size: 0.8rem;
             color: var(--text-secondary);
+            letter-spacing: 0.02em;
         }
 
         .rating-text a {
-            color: var(--primary);
-            text-decoration: underline;
+            color: var(--text);
+            text-decoration: none;
+            border-bottom: 1px solid var(--text);
+            transition: var(--transition-fast);
+        }
+
+        .rating-text a:hover {
+            opacity: 0.7;
         }
 
         .product-price {
             display: flex;
             align-items: baseline;
-            gap: 0.75rem;
+            gap: 1rem;
             margin-bottom: 0.5rem;
         }
 
         .price-current {
-            font-size: 2rem;
-            font-weight: 700;
+            font-family: 'Josefin Sans', sans-serif;
+            font-size: 1.75rem;
+            font-weight: 400;
             color: var(--secondary);
+            letter-spacing: 0.02em;
         }
 
         .price-compare {
-            font-size: 1.25rem;
+            font-size: 1rem;
             color: var(--text-light);
             text-decoration: line-through;
         }
 
         .price-save {
-            background: #fef2f2;
-            color: #dc2626;
-            padding: 0.25rem 0.5rem;
-            border-radius: 4px;
-            font-size: 0.8125rem;
-            font-weight: 600;
+            background: transparent;
+            color: var(--accent);
+            padding: 0.25rem 0.75rem;
+            border-radius: 0;
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            border: 1px solid var(--accent);
         }
 
         .afterpay-message {
-            font-size: 0.875rem;
+            font-size: 0.8rem;
             color: var(--text-secondary);
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
+            letter-spacing: 0.02em;
         }
 
         .afterpay-message strong {
             color: var(--text);
+            font-weight: 500;
         }
 
         .product-description {
             color: var(--text-secondary);
-            margin-bottom: 1.5rem;
-            font-size: 0.9375rem;
-            line-height: 1.7;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+            line-height: 1.8;
+            letter-spacing: 0.01em;
         }
 
-        /* Key Benefits */
+        /* Key Benefits - LV minimal */
         .key-benefits {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 0.75rem;
-            margin-bottom: 1.5rem;
+            gap: 1rem;
+            margin-bottom: 2rem;
         }
 
         .key-benefit {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
-            font-size: 0.875rem;
+            gap: 0.75rem;
+            font-size: 0.8rem;
             color: var(--text);
+            letter-spacing: 0.02em;
         }
 
         .key-benefit svg {
-            width: 18px;
-            height: 18px;
-            color: var(--success);
+            width: 16px;
+            height: 16px;
+            color: var(--primary);
             flex-shrink: 0;
+            stroke-width: 2;
         }
 
-        /* Add to Cart */
+        /* Add to Cart - LV luxury buttons */
         .add-to-cart-section {
-            background: var(--bg-secondary);
-            border-radius: var(--radius-lg);
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-            border: 1px solid var(--border);
+            background: transparent;
+            border-radius: 0;
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+            border: none;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
         }
 
         .quantity-selector {
             display: flex;
             align-items: center;
-            gap: 1rem;
-            margin-bottom: 1rem;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
         }
 
         .quantity-label {
-            font-size: 0.875rem;
+            font-size: 0.75rem;
             font-weight: 500;
             color: var(--text);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
         }
 
         .quantity-controls {
             display: flex;
             align-items: center;
             border: 1px solid var(--border);
-            border-radius: var(--radius);
+            border-radius: 0;
             background: var(--bg);
         }
 
         .quantity-btn {
-            width: 40px;
-            height: 40px;
+            width: 44px;
+            height: 44px;
             border: none;
             background: none;
             cursor: pointer;
-            font-size: 1.25rem;
-            color: var(--text-secondary);
+            font-size: 1rem;
+            color: var(--text);
             transition: var(--transition);
+            font-weight: 300;
         }
 
         .quantity-btn:hover {
-            color: var(--text);
+            color: var(--primary);
             background: var(--bg-tertiary);
         }
 
         .quantity-value {
-            width: 48px;
+            width: 50px;
             text-align: center;
-            font-weight: 600;
-            font-size: 1rem;
+            font-weight: 400;
+            font-size: 0.9rem;
             border: none;
             background: none;
+            border-left: 1px solid var(--border);
+            border-right: 1px solid var(--border);
         }
 
         .btn-add-to-cart {
             width: 100%;
-            padding: 1rem 2rem;
-            background: var(--primary);
+            padding: 1.125rem 2rem;
+            background: var(--secondary);
             color: white;
             border: none;
-            border-radius: var(--radius);
-            font-size: 1rem;
-            font-weight: 600;
+            border-radius: 0;
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
             cursor: pointer;
             transition: var(--transition);
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 0.5rem;
+            gap: 0.75rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-add-to-cart::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--primary);
+            transition: var(--transition);
+            z-index: -1;
+        }
+
+        .btn-add-to-cart:hover::before {
+            left: 0;
         }
 
         .btn-add-to-cart:hover {
-            background: var(--primary-dark);
-            transform: translateY(-1px);
-            box-shadow: var(--shadow-lg);
+            transform: none;
+            box-shadow: none;
         }
 
         .btn-add-to-cart svg {
-            width: 20px;
-            height: 20px;
+            width: 18px;
+            height: 18px;
+            stroke-width: 1.5;
         }
 
-        /* Trust Signals */
+        /* Trust Signals - LV minimal icons */
         .trust-signals {
             display: flex;
             justify-content: space-between;
-            padding: 1rem 0;
-            border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
-            margin-bottom: 1.5rem;
+            padding: 1.5rem 0;
+            margin-bottom: 2rem;
         }
 
         .trust-signal {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 0.375rem;
+            gap: 0.5rem;
             text-align: center;
         }
 
         .trust-signal svg {
-            width: 24px;
-            height: 24px;
-            color: var(--primary);
+            width: 20px;
+            height: 20px;
+            color: var(--text);
+            stroke-width: 1.5;
         }
 
         .trust-signal span {
-            font-size: 0.75rem;
+            font-size: 0.65rem;
             color: var(--text-secondary);
             font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
         }
 
-        /* Product Accordion */
+        /* Product Accordion - LV elegant */
         .product-accordion {
             border-top: 1px solid var(--border);
         }
@@ -466,18 +564,21 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 0;
+            padding: 1.25rem 0;
             cursor: pointer;
-            font-weight: 600;
-            font-size: 0.9375rem;
+            font-weight: 500;
+            font-size: 0.75rem;
             color: var(--text);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
         }
 
         .accordion-header svg {
-            width: 20px;
-            height: 20px;
-            color: var(--text-secondary);
-            transition: transform 0.3s ease;
+            width: 16px;
+            height: 16px;
+            color: var(--text);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            stroke-width: 1.5;
         }
 
         .accordion-item.open .accordion-header svg {
@@ -487,7 +588,7 @@
         .accordion-content {
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.3s ease;
+            transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .accordion-item.open .accordion-content {
@@ -495,76 +596,83 @@
         }
 
         .accordion-body {
-            padding-bottom: 1rem;
+            padding-bottom: 1.5rem;
             color: var(--text-secondary);
-            font-size: 0.9375rem;
-            line-height: 1.7;
+            font-size: 0.85rem;
+            line-height: 1.8;
+            letter-spacing: 0.01em;
         }
 
         .accordion-body ul {
             margin-left: 1.25rem;
-            margin-top: 0.5rem;
+            margin-top: 0.75rem;
         }
 
         .accordion-body li {
-            margin-bottom: 0.375rem;
+            margin-bottom: 0.5rem;
         }
 
-        /* Results Section */
+        /* Results Section - LV editorial style */
         .results-section {
-            background: var(--bg-secondary);
-            padding: 5rem 1.5rem;
+            background: var(--bg);
+            padding: 7rem 3rem;
         }
 
         .results-container {
-            max-width: 1280px;
+            max-width: 1400px;
             margin: 0 auto;
         }
 
         .section-header {
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 4rem;
         }
 
         .section-eyebrow {
-            font-size: 0.8125rem;
-            font-weight: 600;
+            font-family: 'Josefin Sans', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 500;
             text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--primary);
-            margin-bottom: 0.75rem;
-        }
-
-        .section-title {
-            font-size: 2.25rem;
-            font-weight: 700;
-            color: var(--secondary);
+            letter-spacing: 0.2em;
+            color: var(--accent);
             margin-bottom: 1rem;
         }
 
+        .section-title {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 2.75rem;
+            font-weight: 400;
+            color: var(--secondary);
+            margin-bottom: 1.25rem;
+            letter-spacing: 0.01em;
+        }
+
         .section-subtitle {
-            font-size: 1.0625rem;
+            font-size: 0.95rem;
             color: var(--text-secondary);
-            max-width: 600px;
+            max-width: 550px;
             margin: 0 auto;
+            line-height: 1.8;
+            letter-spacing: 0.01em;
         }
 
         .results-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
+            gap: 2.5rem;
         }
 
         .result-card {
             background: var(--bg);
-            border-radius: var(--radius-lg);
+            border-radius: 0;
             overflow: hidden;
-            box-shadow: var(--shadow);
+            box-shadow: none;
             transition: var(--transition);
+            border: 1px solid var(--border);
         }
 
         .result-card:hover {
-            transform: translateY(-4px);
+            transform: translateY(-2px);
             box-shadow: var(--shadow-lg);
         }
 
@@ -575,90 +683,102 @@
             align-items: center;
             justify-content: center;
             color: var(--text-light);
-            font-size: 0.875rem;
+            font-size: 0.8rem;
+            letter-spacing: 0.05em;
         }
 
         .result-content {
-            padding: 1.5rem;
+            padding: 2rem;
         }
 
         .result-stat {
-            font-size: 2rem;
-            font-weight: 700;
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 2.5rem;
+            font-weight: 500;
             color: var(--primary);
             margin-bottom: 0.25rem;
         }
 
         .result-label {
-            font-size: 0.9375rem;
+            font-size: 0.8rem;
             color: var(--text-secondary);
-            margin-bottom: 0.75rem;
+            margin-bottom: 1rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
         }
 
         .result-quote {
-            font-size: 0.875rem;
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1rem;
             color: var(--text);
             font-style: italic;
-            line-height: 1.6;
+            line-height: 1.7;
         }
 
-        /* How It Works */
+        /* How It Works - LV minimal steps */
         .how-section {
-            padding: 5rem 1.5rem;
-            background: var(--bg);
+            padding: 7rem 3rem;
+            background: var(--bg-tertiary);
         }
 
         .how-container {
-            max-width: 1280px;
+            max-width: 1400px;
             margin: 0 auto;
         }
 
         .how-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
+            gap: 3rem;
         }
 
         .how-step {
             text-align: center;
+            padding: 2rem 1.5rem;
         }
 
         .step-number {
-            width: 48px;
-            height: 48px;
-            background: var(--primary);
-            color: white;
-            border-radius: 50%;
+            width: 56px;
+            height: 56px;
+            background: transparent;
+            color: var(--secondary);
+            border: 1px solid var(--secondary);
+            border-radius: 0;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: 700;
-            font-size: 1.25rem;
-            margin: 0 auto 1rem;
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-weight: 400;
+            font-size: 1.5rem;
+            margin: 0 auto 1.5rem;
         }
 
         .step-title {
-            font-weight: 600;
-            font-size: 1rem;
+            font-family: 'Josefin Sans', sans-serif;
+            font-weight: 500;
+            font-size: 0.75rem;
             color: var(--secondary);
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.75rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
         }
 
         .step-desc {
-            font-size: 0.875rem;
+            font-size: 0.85rem;
             color: var(--text-secondary);
-            line-height: 1.6;
+            line-height: 1.8;
+            letter-spacing: 0.01em;
         }
 
-        /* Testimonials */
+        /* Testimonials - LV dark luxury */
         .testimonials-section {
-            padding: 5rem 1.5rem;
-            background: var(--secondary);
+            padding: 7rem 3rem;
+            background: var(--primary);
             color: white;
         }
 
         .testimonials-container {
-            max-width: 1280px;
+            max-width: 1400px;
             margin: 0 auto;
         }
 
@@ -671,68 +791,78 @@
         }
 
         .testimonials-section .section-subtitle {
-            color: rgba(255,255,255,0.7);
+            color: rgba(255,255,255,0.6);
         }
 
         .testimonials-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
+            gap: 2rem;
         }
 
         .testimonial-card {
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: var(--radius-lg);
-            padding: 1.5rem;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 0;
+            padding: 2.5rem 2rem;
         }
 
         .testimonial-stars {
             color: var(--accent);
-            margin-bottom: 1rem;
-            font-size: 1rem;
-            letter-spacing: 2px;
+            margin-bottom: 1.5rem;
+            font-size: 0.875rem;
+            letter-spacing: 3px;
         }
 
         .testimonial-text {
-            font-size: 0.9375rem;
-            line-height: 1.7;
-            margin-bottom: 1.25rem;
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.75rem;
             color: rgba(255,255,255,0.9);
+            font-style: italic;
         }
 
         .testimonial-author {
             display: flex;
             align-items: center;
-            gap: 0.75rem;
+            gap: 1rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
         }
 
         .author-avatar {
-            width: 40px;
-            height: 40px;
-            background: var(--primary);
-            border-radius: 50%;
+            width: 44px;
+            height: 44px;
+            background: transparent;
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 0;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: 600;
-            font-size: 0.875rem;
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-weight: 500;
+            font-size: 1rem;
         }
 
         .author-name {
-            font-weight: 600;
-            font-size: 0.875rem;
+            font-family: 'Josefin Sans', sans-serif;
+            font-weight: 500;
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
         }
 
         .author-meta {
-            font-size: 0.8125rem;
-            color: rgba(255,255,255,0.6);
+            font-size: 0.7rem;
+            color: rgba(255,255,255,0.5);
+            letter-spacing: 0.05em;
         }
 
-        /* FAQ Section */
+        /* FAQ Section - LV clean accordion */
         .faq-section {
-            padding: 5rem 1.5rem;
-            background: var(--bg-secondary);
+            padding: 7rem 3rem;
+            background: var(--bg);
         }
 
         .faq-container {
@@ -741,39 +871,48 @@
         }
 
         .faq-list {
-            margin-top: 3rem;
+            margin-top: 4rem;
         }
 
         .faq-item {
-            background: var(--bg);
-            border-radius: var(--radius);
-            margin-bottom: 0.75rem;
-            border: 1px solid var(--border);
+            background: transparent;
+            border-radius: 0;
+            margin-bottom: 0;
+            border: none;
+            border-bottom: 1px solid var(--border);
             overflow: hidden;
+        }
+
+        .faq-item:first-child {
+            border-top: 1px solid var(--border);
         }
 
         .faq-question {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1.25rem 1.5rem;
+            padding: 1.75rem 0;
             cursor: pointer;
-            font-weight: 600;
-            font-size: 1rem;
+            font-family: 'Josefin Sans', sans-serif;
+            font-weight: 500;
+            font-size: 0.85rem;
             color: var(--text);
             transition: var(--transition);
+            letter-spacing: 0.02em;
         }
 
         .faq-question:hover {
-            background: var(--bg-secondary);
+            background: transparent;
+            color: var(--primary);
         }
 
         .faq-question svg {
-            width: 20px;
-            height: 20px;
-            color: var(--text-secondary);
-            transition: transform 0.3s ease;
+            width: 16px;
+            height: 16px;
+            color: var(--text);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             flex-shrink: 0;
+            stroke-width: 1.5;
         }
 
         .faq-item.open .faq-question svg {
@@ -783,7 +922,7 @@
         .faq-answer {
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.3s ease;
+            transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .faq-item.open .faq-answer {
@@ -791,26 +930,28 @@
         }
 
         .faq-answer-content {
-            padding: 0 1.5rem 1.25rem;
+            padding: 0 0 2rem;
             color: var(--text-secondary);
-            line-height: 1.7;
+            line-height: 1.9;
+            font-size: 0.9rem;
+            letter-spacing: 0.01em;
         }
 
-        /* Guarantee Section */
+        /* Guarantee Section - LV elegant */
         .guarantee-section {
-            padding: 5rem 1.5rem;
-            background: var(--bg);
+            padding: 7rem 3rem;
+            background: var(--bg-tertiary);
         }
 
         .guarantee-container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
         }
 
         .guarantee-box {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-            border-radius: var(--radius-lg);
-            padding: 3rem;
+            background: var(--secondary);
+            border-radius: 0;
+            padding: 5rem 4rem;
             text-align: center;
             color: white;
             position: relative;
@@ -820,11 +961,11 @@
         .guarantee-box::before {
             content: '';
             position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 60%);
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, transparent 0%, rgba(255,255,255,0.02) 100%);
         }
 
         .guarantee-content {
@@ -833,148 +974,186 @@
         }
 
         .guarantee-badge {
-            width: 64px;
-            height: 64px;
-            background: var(--accent);
-            border-radius: 50%;
+            width: 72px;
+            height: 72px;
+            background: transparent;
+            border: 1px solid var(--accent);
+            border-radius: 0;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 1.5rem;
+            margin: 0 auto 2rem;
         }
 
         .guarantee-badge svg {
-            width: 32px;
-            height: 32px;
-            color: var(--secondary);
+            width: 28px;
+            height: 28px;
+            color: var(--accent);
+            stroke-width: 1.5;
         }
 
         .guarantee-title {
-            font-size: 1.75rem;
-            font-weight: 700;
-            margin-bottom: 0.75rem;
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 2.25rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+            letter-spacing: 0.02em;
         }
 
         .guarantee-text {
-            font-size: 1rem;
-            opacity: 0.9;
-            max-width: 500px;
-            margin: 0 auto 1.5rem;
-            line-height: 1.7;
+            font-size: 0.95rem;
+            opacity: 0.7;
+            max-width: 480px;
+            margin: 0 auto 2.5rem;
+            line-height: 1.9;
+            letter-spacing: 0.01em;
         }
 
         .btn-guarantee {
-            background: white;
-            color: var(--primary);
-            padding: 0.875rem 2rem;
-            border-radius: var(--radius);
-            font-weight: 600;
-            font-size: 1rem;
+            background: transparent;
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 0;
+            border: 1px solid white;
+            font-family: 'Josefin Sans', sans-serif;
+            font-weight: 500;
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
             text-decoration: none;
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.75rem;
             transition: var(--transition);
         }
 
         .btn-guarantee:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            background: white;
+            color: var(--secondary);
+            transform: none;
+            box-shadow: none;
         }
 
-        /* Email Capture */
+        .btn-guarantee svg {
+            transition: var(--transition);
+        }
+
+        .btn-guarantee:hover svg {
+            transform: translateX(4px);
+        }
+
+        /* Email Capture - LV minimal */
         .email-section {
-            padding: 4rem 1.5rem;
-            background: var(--bg-tertiary);
+            padding: 5rem 3rem;
+            background: var(--bg);
+            border-top: 1px solid var(--border);
         }
 
         .email-container {
-            max-width: 600px;
+            max-width: 550px;
             margin: 0 auto;
             text-align: center;
         }
 
         .email-title {
-            font-size: 1.5rem;
-            font-weight: 700;
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.75rem;
+            font-weight: 400;
             color: var(--secondary);
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.75rem;
+            letter-spacing: 0.02em;
         }
 
         .email-subtitle {
             color: var(--text-secondary);
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+            letter-spacing: 0.01em;
         }
 
         .email-form {
             display: flex;
-            gap: 0.75rem;
+            gap: 0;
             max-width: 450px;
             margin: 0 auto;
         }
 
         .email-input {
             flex: 1;
-            padding: 0.875rem 1rem;
+            padding: 1rem 1.25rem;
             border: 1px solid var(--border);
-            border-radius: var(--radius);
-            font-size: 1rem;
+            border-right: none;
+            border-radius: 0;
+            font-size: 0.85rem;
             background: var(--bg);
+            letter-spacing: 0.02em;
         }
 
         .email-input:focus {
             outline: none;
-            border-color: var(--primary);
+            border-color: var(--secondary);
+        }
+
+        .email-input::placeholder {
+            color: var(--text-light);
+            letter-spacing: 0.02em;
         }
 
         .email-btn {
-            padding: 0.875rem 1.5rem;
-            background: var(--primary);
+            padding: 1rem 1.75rem;
+            background: var(--secondary);
             color: white;
-            border: none;
-            border-radius: var(--radius);
-            font-weight: 600;
+            border: 1px solid var(--secondary);
+            border-radius: 0;
+            font-family: 'Josefin Sans', sans-serif;
+            font-weight: 500;
+            font-size: 0.7rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
             cursor: pointer;
             transition: var(--transition);
             white-space: nowrap;
         }
 
         .email-btn:hover {
-            background: var(--primary-dark);
+            background: var(--primary);
+            border-color: var(--primary);
         }
 
-        /* Footer */
+        /* Footer - LV sophisticated */
         footer {
             background: var(--secondary);
             color: white;
-            padding: 4rem 1.5rem 2rem;
+            padding: 5rem 3rem 2.5rem;
         }
 
         .footer-container {
-            max-width: 1280px;
+            max-width: 1400px;
             margin: 0 auto;
         }
 
         .footer-grid {
             display: grid;
             grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 3rem;
-            margin-bottom: 3rem;
+            gap: 4rem;
+            margin-bottom: 4rem;
         }
 
         .footer-brand p {
-            color: rgba(255,255,255,0.6);
-            font-size: 0.875rem;
-            margin-top: 1rem;
-            line-height: 1.7;
+            color: rgba(255,255,255,0.5);
+            font-size: 0.8rem;
+            margin-top: 1.25rem;
+            line-height: 1.8;
+            letter-spacing: 0.01em;
         }
 
         .footer-links h4 {
-            font-size: 0.875rem;
-            font-weight: 600;
-            margin-bottom: 1.25rem;
+            font-family: 'Josefin Sans', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.15em;
         }
 
         .footer-links ul {
@@ -982,14 +1161,15 @@
         }
 
         .footer-links li {
-            margin-bottom: 0.625rem;
+            margin-bottom: 0.875rem;
         }
 
         .footer-links a {
-            color: rgba(255,255,255,0.6);
+            color: rgba(255,255,255,0.5);
             text-decoration: none;
-            font-size: 0.875rem;
+            font-size: 0.8rem;
             transition: var(--transition);
+            letter-spacing: 0.02em;
         }
 
         .footer-links a:hover {
@@ -997,28 +1177,29 @@
         }
 
         .footer-bottom {
-            border-top: 1px solid rgba(255,255,255,0.1);
-            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.08);
+            padding-top: 2.5rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-size: 0.8125rem;
-            color: rgba(255,255,255,0.5);
+            font-size: 0.7rem;
+            color: rgba(255,255,255,0.4);
+            letter-spacing: 0.02em;
         }
 
         .payment-icons {
             display: flex;
-            gap: 0.5rem;
+            gap: 0.75rem;
         }
 
         .payment-icon {
-            width: 40px;
-            height: 25px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 4px;
+            width: 44px;
+            height: 28px;
+            background: rgba(255,255,255,0.08);
+            border-radius: 0;
         }
 
-        /* Sticky Mobile Cart */
+        /* Sticky Mobile Cart - LV minimal */
         .sticky-cart {
             display: none;
             position: fixed;
@@ -1027,7 +1208,7 @@
             right: 0;
             background: var(--bg);
             padding: 1rem 1.5rem;
-            box-shadow: 0 -4px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 -2px 20px rgba(0,0,0,0.06);
             z-index: 99;
             border-top: 1px solid var(--border);
         }
@@ -1036,19 +1217,21 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 1rem;
-            max-width: 600px;
+            gap: 1.5rem;
+            max-width: 500px;
             margin: 0 auto;
         }
 
         .sticky-cart-price {
-            font-size: 1.25rem;
-            font-weight: 700;
+            font-family: 'Josefin Sans', sans-serif;
+            font-size: 1.125rem;
+            font-weight: 400;
             color: var(--secondary);
+            letter-spacing: 0.02em;
         }
 
         .sticky-cart-price span {
-            font-size: 0.875rem;
+            font-size: 0.8rem;
             color: var(--text-light);
             text-decoration: line-through;
             margin-left: 0.5rem;
@@ -1057,22 +1240,26 @@
 
         .sticky-cart-btn {
             flex: 1;
-            max-width: 200px;
-            padding: 0.875rem 1.5rem;
-            background: var(--primary);
+            max-width: 180px;
+            padding: 0.875rem 1.25rem;
+            background: var(--secondary);
             color: white;
             border: none;
-            border-radius: var(--radius);
-            font-weight: 600;
-            font-size: 0.9375rem;
+            border-radius: 0;
+            font-family: 'Josefin Sans', sans-serif;
+            font-weight: 500;
+            font-size: 0.7rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
             cursor: pointer;
         }
 
-        /* Responsive */
+        /* Responsive - LV graceful scaling */
         @media (max-width: 1024px) {
             .product-section {
                 grid-template-columns: 1fr;
-                gap: 2rem;
+                gap: 3rem;
+                padding: 3rem 2rem 5rem;
             }
 
             .product-gallery {
@@ -1080,17 +1267,28 @@
                 top: 0;
             }
 
+            .results-section,
+            .how-section,
+            .testimonials-section,
+            .faq-section,
+            .guarantee-section {
+                padding: 5rem 2rem;
+            }
+
             .results-grid,
             .testimonials-grid {
                 grid-template-columns: 1fr;
+                gap: 2rem;
             }
 
             .how-grid {
                 grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
             }
 
             .footer-grid {
                 grid-template-columns: repeat(2, 1fr);
+                gap: 3rem;
             }
         }
 
@@ -1099,12 +1297,16 @@
                 display: none;
             }
 
+            header {
+                padding: 1rem 1.5rem;
+            }
+
             .section-title {
-                font-size: 1.75rem;
+                font-size: 2rem;
             }
 
             .product-title {
-                font-size: 1.5rem;
+                font-size: 1.75rem;
             }
 
             .how-grid {
@@ -1112,18 +1314,31 @@
                 gap: 1.5rem;
             }
 
+            .how-step {
+                padding: 1.5rem 1rem;
+            }
+
             .email-form {
                 flex-direction: column;
             }
 
+            .email-input {
+                border-right: 1px solid var(--border);
+                border-bottom: none;
+            }
+
             .footer-grid {
                 grid-template-columns: 1fr;
-                gap: 2rem;
+                gap: 2.5rem;
+            }
+
+            footer {
+                padding: 4rem 1.5rem 2rem;
             }
 
             .footer-bottom {
                 flex-direction: column;
-                gap: 1rem;
+                gap: 1.5rem;
                 text-align: center;
             }
 
@@ -1134,6 +1349,10 @@
             .product-section {
                 padding-bottom: 100px;
             }
+
+            .guarantee-box {
+                padding: 3rem 2rem;
+            }
         }
 
         @media (max-width: 640px) {
@@ -1143,12 +1362,22 @@
 
             .trust-signals {
                 flex-wrap: wrap;
-                gap: 1rem;
+                gap: 1.25rem;
                 justify-content: center;
             }
 
             .thumbnail-grid {
                 grid-template-columns: repeat(4, 1fr);
+                gap: 0.75rem;
+            }
+
+            .product-badges {
+                gap: 0.5rem;
+            }
+
+            .badge {
+                padding: 0.375rem 0.75rem;
+                font-size: 0.6rem;
             }
         }
     </style>
