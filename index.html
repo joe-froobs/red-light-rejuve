@@ -16,26 +16,28 @@
         }
 
         :root {
-            /* LV-inspired luxury color palette */
-            --primary: #0b233c;
-            --primary-dark: #061525;
-            --primary-light: #143656;
-            --secondary: #161616;
-            --accent: #c4a97d;
-            --accent-light: #d4bc94;
+            /* LV-inspired luxury color palette - Burgundy/Brown/Gold */
+            --primary: #800020;
+            --primary-dark: #4A0E0E;
+            --primary-light: #9a1a3a;
+            --secondary: #3d2b1f;
+            --secondary-dark: #2a1e15;
+            --accent: #c9a962;
+            --accent-light: #d4bc7a;
+            --crimson: #DC143C;
             --success: #2d5a3d;
-            --text: #161616;
-            --text-secondary: #5c5c5c;
-            --text-light: #8a8a8a;
-            --border: #e8e8e8;
-            --bg: #ffffff;
-            --bg-secondary: #fafafa;
-            --bg-tertiary: #f5f5f5;
+            --text: #2a1e15;
+            --text-secondary: #5c4a3d;
+            --text-light: #8a7a6d;
+            --border: #e5ddd5;
+            --bg: #fffcf9;
+            --bg-secondary: #faf7f4;
+            --bg-tertiary: #f5f0eb;
             --radius: 0;
             --radius-lg: 0;
-            --shadow-sm: 0 1px 3px rgba(0,0,0,0.04);
-            --shadow: 0 2px 8px rgba(0,0,0,0.06);
-            --shadow-lg: 0 8px 30px rgba(0,0,0,0.08);
+            --shadow-sm: 0 1px 3px rgba(42,30,21,0.04);
+            --shadow: 0 2px 8px rgba(42,30,21,0.06);
+            --shadow-lg: 0 8px 30px rgba(42,30,21,0.08);
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             --transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
         }
@@ -118,7 +120,7 @@
         .logo-icon {
             width: 36px;
             height: 36px;
-            background: var(--primary);
+            background: var(--secondary);
             border-radius: 0;
             display: flex;
             align-items: center;
@@ -128,7 +130,7 @@
         .logo-icon svg {
             width: 20px;
             height: 20px;
-            color: white;
+            color: var(--crimson);
         }
 
         .nav-links {
@@ -274,9 +276,9 @@
         }
 
         .badge-bestseller {
-            background: transparent;
+            background: var(--secondary);
             color: var(--accent);
-            border-color: var(--accent);
+            border-color: var(--secondary);
         }
 
         .badge-tga {
@@ -310,7 +312,7 @@
         }
 
         .stars {
-            color: var(--accent);
+            color: var(--crimson);
             font-size: 0.875rem;
             letter-spacing: 2px;
         }
@@ -355,14 +357,14 @@
 
         .price-save {
             background: transparent;
-            color: var(--accent);
+            color: var(--crimson);
             padding: 0.25rem 0.75rem;
             border-radius: 0;
             font-size: 0.7rem;
             font-weight: 500;
             letter-spacing: 0.08em;
             text-transform: uppercase;
-            border: 1px solid var(--accent);
+            border: 1px solid var(--crimson);
         }
 
         .afterpay-message {
@@ -405,7 +407,7 @@
         .key-benefit svg {
             width: 16px;
             height: 16px;
-            color: var(--primary);
+            color: var(--crimson);
             flex-shrink: 0;
             stroke-width: 2;
         }
@@ -695,7 +697,7 @@
             font-family: 'Cormorant Garamond', Georgia, serif;
             font-size: 2.5rem;
             font-weight: 500;
-            color: var(--primary);
+            color: var(--crimson);
             margin-bottom: 0.25rem;
         }
 
@@ -740,9 +742,9 @@
         .step-number {
             width: 56px;
             height: 56px;
-            background: transparent;
-            color: var(--secondary);
-            border: 1px solid var(--secondary);
+            background: var(--secondary);
+            color: var(--accent);
+            border: none;
             border-radius: 0;
             display: flex;
             align-items: center;
@@ -808,7 +810,7 @@
         }
 
         .testimonial-stars {
-            color: var(--accent);
+            color: var(--crimson);
             margin-bottom: 1.5rem;
             font-size: 0.875rem;
             letter-spacing: 3px;
@@ -976,8 +978,8 @@
         .guarantee-badge {
             width: 72px;
             height: 72px;
-            background: transparent;
-            border: 1px solid var(--accent);
+            background: var(--accent);
+            border: none;
             border-radius: 0;
             display: flex;
             align-items: center;
@@ -988,7 +990,7 @@
         .guarantee-badge svg {
             width: 28px;
             height: 28px;
-            color: var(--accent);
+            color: var(--secondary);
             stroke-width: 1.5;
         }
 
