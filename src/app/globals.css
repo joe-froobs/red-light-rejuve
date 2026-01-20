@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+@import "tailwindcss";
+
+:root {
+  /* Luxury color palette - Deep Charcoal/Ivory/Gold (Aesop x LV inspired) */
+  --primary: #2C2C2C;
+  --primary-dark: #1A1A1A;
+  --primary-light: #3D3D3D;
+  --secondary: #1A1A1A;
+  --secondary-dark: #0D0D0D;
+  --accent: #C9A962;
+  --accent-light: #D4B87A;
+  --red-accent: #8B4049;
+  --success: #4A6B5A;
+  --text: #1A1A1A;
+  --text-secondary: #5C5C5C;
+  --text-light: #8A8A8A;
+  --border: #E5E5E5;
+  --bg: #FAFAFA;
+  --bg-secondary: #F5F5F5;
+  --bg-tertiary: #EFEFEF;
+}
+
+@theme inline {
+  --color-primary: var(--primary);
+  --color-primary-dark: var(--primary-dark);
+  --color-secondary: var(--secondary);
+  --color-secondary-dark: var(--secondary-dark);
+  --color-accent: var(--accent);
+  --color-red-accent: var(--red-accent);
+  --color-text: var(--text);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-light: var(--text-light);
+  --color-border: var(--border);
+  --color-bg: var(--bg);
+  --color-bg-secondary: var(--bg-secondary);
+  --color-bg-tertiary: var(--bg-tertiary);
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Josefin Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Josefin Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.7;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: 0.02em;
+  font-weight: 400;
+}
+
+/* LV-style editorial serif for headings */
+h1, h2, h3 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-light);
+}
